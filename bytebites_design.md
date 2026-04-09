@@ -27,10 +27,9 @@ Transaction
 +-----------------------------------------+
 Relationships:
 
-Menu 1 --- * FoodItem (Menu contains many FoodItem)
-Transaction 1 --- * FoodItem (Transaction includes one or more FoodItem)
-Customer 1 --- * Transaction (Customer has zero or more Transaction in purchaseHistory)
-Notes:
+Customer 1 --- * Transaction  (Customer can have multiple Transactions)
+Transaction * --- * FoodItem  (Transaction contains one or more FoodItems)
+Menu 1 --- * FoodItem         (Menu contains multiple FoodItems)
 
 totalCost is derived by summing each FoodItem.price in Transaction.items.
 Design is minimal and follows the ByteBites spec; no extra classes added.
